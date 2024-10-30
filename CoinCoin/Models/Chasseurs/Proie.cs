@@ -1,11 +1,12 @@
 ﻿using CoinCoin.Models.Canards;
+using CoinCoin.Models.Canards.Interfaces;
 
 namespace CoinCoin.Models.Chasseurs
 {
     public class Proie : IAnimal
     {
-        private Canard _Type;
-        public Proie(Canard type)
+        private ICancanVolant _Type;
+        public Proie(ICancanVolant type)
         {
             _Type = type;
         }

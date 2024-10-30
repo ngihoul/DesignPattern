@@ -7,6 +7,7 @@ using CoinCoin.Models.ComportementsCancan;
 using CoinCoin.Models.ComportementsCancan.Interfaces;
 using CoinCoin.Models.Eleveur;
 using SuperCanard;
+using System.Reflection;
 
 List<Canard> canards = new List<Canard>
 {
@@ -120,24 +121,26 @@ Console.WriteLine(e3.Soigner(c));
 Console.WriteLine(e3.Soigner(new Mandarin()));
 Console.WriteLine("*************");
 
-try
-{
-    Console.WriteLine("*************");
-    Console.WriteLine("*  Combat ! *");
-    Console.WriteLine("*************");
-    CanardCombattant c1 = new CanardAgressif(new Colvert());
-    CanardCombattant c2 = new CanardAgressif(new Leurre());
-    Console.WriteLine($"Combattant #1 : {c1.Afficher()}");
-    Console.WriteLine($"Combattant #2 : {c2.Afficher()}");
+Console.WriteLine("*************");
+Console.WriteLine("*  Combat ! *");
+Console.WriteLine("*************");
+Bidule b = new Bidule();
 
+CanardVivant c1 = b.CreateColvertAgressif();
 
-    CanardCombattant gagnant = (CanardCombattant) c2.Combattre(c1);
-    Console.WriteLine($"Gagnant : {gagnant.Afficher()}");
-    
-    Console.WriteLine("*************");
-} catch(Exception ex)
+CanardVivant c2 = b.CreateMandarinAgressif();
+CanardVivant c3 = b.CreateLeurrePacifique();
+
+Console.WriteLine($"Combattant #1 : {c1.Afficher()}");
+Console.WriteLine($"Combattant #2 : {c2.Afficher()}");
+
+IVivant gagnant = c2.Combattre(c1);
+if (c1 == gagnant)
 {
-    Console.WriteLine(ex.Message);
-    Console.WriteLine("*************");
+    Console.WriteLine(c1.Cancaner());
+}
+else
+{
+    Console.WriteLine(c2.Cancaner());
 }
 

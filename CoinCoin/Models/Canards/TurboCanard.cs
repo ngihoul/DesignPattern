@@ -5,11 +5,8 @@ namespace CoinCoin.Models.Canards
 {
     public class TurboCanard : Canard
     {
-        public TurboCanard()
-        {
-            ComportementCancan = new Coincoin();
-            ComportementVol = new VolerAvecDesReacteurs();
-        }
+        public TurboCanard() : base(new VolerAvecDesReacteurs(), new Coincoin()) { }
+
         public override string Afficher()
         {
             return "Je suis un Turbo Canard !";

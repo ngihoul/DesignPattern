@@ -1,6 +1,6 @@
 ﻿namespace CoinCoin.Models.Combattants.Interfaces
 {
-    public interface ICombattant
+    public interface IVivant
     {
         public int Vie { get; }
         public int Force { get; }
@@ -11,6 +11,6 @@
         public void AddForce(int force);
         public void AddDefence(int defence);
 
-        public ICombattant Combattre(ICombattant adversaire);
+        public IVivant Combattre(IVivant adversaire);
     }
 }

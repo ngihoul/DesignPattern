@@ -6,10 +6,8 @@ namespace CoinCoin.Models.Canards
 {
     public class Colvert : Canard
     {
-        public Colvert()
+        public Colvert() : base(new VolerAvecDesAiles(), new Coincoin())
         {
-            ComportementCancan = new Coincoin();
-            ComportementVol = new VolerAvecDesAiles();
         }
         public override string Afficher()
         {

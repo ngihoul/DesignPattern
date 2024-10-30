@@ -5,10 +5,8 @@ namespace CoinCoin.Models.Canards
 {
     public class CanardPlastique : Canard
     {
-        public CanardPlastique()
+        public CanardPlastique() : base(new NePasVoler(), new Muet())
         {
-            ComportementVol = new NePasVoler();
-            ComportementCancan = new Muet();
         }
         public override string Afficher()
         {
